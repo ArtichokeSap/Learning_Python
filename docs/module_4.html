@@ -1,44 +1,47 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Module 4: Object Oriented Programming &mdash; Python Like You Mean It</title>
   
 
   
-  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/my_theme.css" type="text/css" />
+
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
         <script src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script src="_static/gtag.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/my_theme.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Introduction to Object Oriented Programming" href="Module4_OOP/Introduction_to_OOP.html" />
@@ -83,6 +86,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -116,6 +120,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -150,18 +155,20 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Module 4: Object Oriented Programming</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="_sources/module_4.rst.txt" rel="nofollow"> View page source</a>
           
         
@@ -202,7 +209,7 @@
 <div class="section" id="module-4-object-oriented-programming">
 <h1>Module 4: Object Oriented Programming<a class="headerlink" href="#module-4-object-oriented-programming" title="Permalink to this headline">¶</a></h1>
 <p>In this module, we will come to see that Python is an object-oriented language. That is, the language is all about defining different types of objects that encapsulate data, and that possess functions that permit users to access and manipulate this data. Our tour through <a class="reference external" href="https://www.pythonlikeyoumeanit.com/module_2.html">the essentials of Python</a> and <a class="reference external" href="https://www.pythonlikeyoumeanit.com/module_3.html">the essentials of NumPy</a> brought us into contact with various types of objects, such as the <code class="code docutils literal notranslate"><span class="pre">int</span></code>, <code class="code docutils literal notranslate"><span class="pre">str</span></code>, <code class="code docutils literal notranslate"><span class="pre">list</span></code>, <code class="code docutils literal notranslate"><span class="pre">tuple</span></code>, <code class="code docutils literal notranslate"><span class="pre">dict</span></code>, and the <code class="code docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>, to name a few. We have seen that these different types of objects have starkly different functionality from one another. We will study the syntax and constructs for creating and interacting with objects in Python. Ultimately, will find our skill sets as Python-users much fuller and more sophisticated having understood object-oriented programming in Python.</p>
-<p>We being this module by establishing some key terminology for discussing object-oriented programming, drawing attention to the important fact that the terms ‘class’ and ‘type’ mean the same thing in modern Python. Next, we study the syntax for defining a class, and take time to distinguish between the resulting class object and the subsequent class instances that can then be created. Having defined our first custom class of object, we then study the syntax for defining class-methods, which permits us add customized functionality to our class. Further, we will introduce ourselves to Python’s reserved special methods, which empower us to fully interface our class with the Python’s protocols for behaving like a sequence, an iterable, a function, etc. We conclude this module with a brief discussion of the concept of inheritance, which is a mechanism by which a new class can inherit attributes from an existing class.</p>
+<p>We begin this module by establishing some key terminology for discussing object-oriented programming, drawing attention to the important fact that the terms ‘class’ and ‘type’ mean the same thing in modern Python. Next, we study the syntax for defining a class, and take time to distinguish between the resulting class object and the subsequent class instances that can then be created. Having defined our first custom class of object, we then study the syntax for defining class-methods, which permits us to add customized functionality to our class. Further, we will introduce ourselves to Python’s reserved special methods, which empower us to fully interface our class with Python’s protocols for behaving like a sequence, an iterable, a function, etc. We conclude this module with a brief discussion of the concept of inheritance, which is a mechanism by which a new class can inherit attributes from an existing class.</p>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul>
@@ -257,29 +264,29 @@
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="Module4_OOP/Introduction_to_OOP.html" class="btn btn-neutral float-right" title="Introduction to Object Oriented Programming" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="Module3_IntroducingNumpy/Problems/Approximating_pi.html" class="btn btn-neutral float-left" title="Playing Darts and Estimating Pi" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="Module4_OOP/Introduction_to_OOP.html" class="btn btn-neutral float-right" title="Introduction to Object Oriented Programming" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="Module3_IntroducingNumpy/Problems/Approximating_pi.html" class="btn btn-neutral float-left" title="Playing Darts and Estimating Pi" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, Ryan Soklaski
+        &#169; Copyright 2021, Ryan Soklaski.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -287,7 +294,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {

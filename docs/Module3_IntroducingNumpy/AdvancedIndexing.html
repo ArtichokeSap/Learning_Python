@@ -1,46 +1,49 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <meta content="Topic: Advanced indexing with numpy arrays, Difficulty: Hard, Category: Section" name="description" />
 <meta content="numpy array, integer array indexing, boolean array indexing, copy indexing, advanced" name="keywords" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Advanced Indexing &mdash; Python Like You Mean It</title>
   
 
   
-  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
+
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
         <script src="../_static/doctools.js"></script>
-        <script src="../_static/language_data.js"></script>
         <script src="https://www.googletagmanager.com/gtag/js?id=UA-115029372-1"></script>
         <script src="../_static/gtag.js"></script>
         <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
         <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
     
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Module 3: Problems" href="../module_3_problems.html" />
@@ -85,6 +88,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -134,6 +138,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -168,11 +173,13 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../module_3.html">Module 3: The Essentials of NumPy</a> &raquo;</li>
         
@@ -181,7 +188,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
             <a href="../_sources/Module3_IntroducingNumpy/AdvancedIndexing.md.txt" rel="nofollow"> View page source</a>
           
         
@@ -266,7 +273,7 @@
 <span class="go">False</span>
 </pre></div>
 </div>
-<p>The flexibility permitted by advanced indexing makes it a difficult topic to treat exhaustively without delving into somewhat terse and abstract notation. It is best to refer to <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html#advanced-indexing">the official documentation</a> for such a treatment of the topic. Here, we will discuss the essential aspects of advanced indexing, with the aim of the discussion being both thorough and accessible.</p>
+<p>The flexibility permitted by advanced indexing makes it a difficult topic to treat exhaustively without delving into somewhat terse and abstract notation. It is best to refer to <a class="reference external" href="https://numpy.org/doc/stable/reference/arrays.indexing.html#advanced-indexing">the official documentation</a> for such a treatment of the topic. Here, we will discuss the essential aspects of advanced indexing, with the aim of the discussion being both thorough and accessible.</p>
 <div class="admonition note">
 <p class="admonition-title fa fa-exclamation-circle"><strong>Advanced Indexing</strong>:</p>
 <p>Given an <span class="math notranslate nohighlight">\(N\)</span>-dimensional array, <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">x[index]</span></code> invokes <strong>advanced indexing</strong> whenever <code class="docutils literal notranslate"><span class="pre">index</span></code> is:</p>
@@ -521,8 +528,8 @@ array. Refer to the preceding example and convince yourself that this is the beh
 <span class="gp">... </span>              <span class="p">[</span><span class="o">-</span><span class="mf">0.29</span><span class="p">,</span>  <span class="mf">0.13</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.26</span><span class="p">,</span>  <span class="mf">0.33</span><span class="p">]])</span>
 </pre></div>
 </div>
-<p>Use boolean array-indexing and NumPy’s <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.logic.html">logical functions</a> to select the contents of <code class="docutils literal notranslate"><span class="pre">h</span></code> that satisfy the following conditions. Because you are dealing with floating-point numbers, <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Understanding-Numerical-Precision">you should not require that two values are exactly equal</a>; rather, make use of the function
-<a class="reference external" href="https://docs.scipy.org/doc/numpy-dev/reference/generated/numpy.isclose.html">numpy.isclose</a>.</p>
+<p>Use boolean array-indexing and NumPy’s <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.logic.html">logical functions</a> to select the contents of <code class="docutils literal notranslate"><span class="pre">h</span></code> that satisfy the following conditions. Because you are dealing with floating-point numbers, <a class="reference external" href="https://www.pythonlikeyoumeanit.com/Module2_EssentialsOfPython/Basic_Objects.html#Understanding-Numerical-Precision">you should not require that two values are exactly equal</a>; rather, make use of the function
+<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.isclose.html#numpy.isclose">numpy.isclose</a>.</p>
 <ol class="arabic simple">
 <li><p>All negative entries in <code class="docutils literal notranslate"><span class="pre">h</span></code></p></li>
 <li><p>All entries in <code class="docutils literal notranslate"><span class="pre">h</span></code> “equal” to <code class="docutils literal notranslate"><span class="pre">0.01</span></code> or <code class="docutils literal notranslate"><span class="pre">0.33</span></code></p></li>
@@ -531,7 +538,7 @@ array. Refer to the preceding example and convince yourself that this is the beh
 </div>
 <div class="section" id="Converting-a-Boolean-Index-Array-to-Integer-Index-Arrays:-numpy.where">
 <h3>Converting a Boolean Index-Array to Integer Index-Arrays: numpy.where<a class="headerlink" href="#Converting-a-Boolean-Index-Array-to-Integer-Index-Arrays:-numpy.where" title="Permalink to this headline">¶</a></h3>
-<p>The function <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.where.html">numpy.where</a> can be used to take a boolean-valued array, and produce the <em>tuple</em> of index-arrays that access the <code class="docutils literal notranslate"><span class="pre">True</span></code> entries of that array, via integer array indexing (discussed at the beginning of this section).</p>
+<p>The function <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.where.html">numpy.where</a> can be used to take a boolean-valued array, and produce the <em>tuple</em> of index-arrays that access the <code class="docutils literal notranslate"><span class="pre">True</span></code> entries of that array, via integer array indexing (discussed at the beginning of this section).</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># demonstrating `np.where`</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">bool_ind</span>
 <span class="n">array</span><span class="p">([[[</span><span class="kc">False</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">],</span>
@@ -570,7 +577,7 @@ array. Refer to the preceding example and convince yourself that this is the beh
 <span class="c1"># only sheet-0 contains such values</span>
 </pre></div>
 </div>
-<p>Armed with NumPy’s suite of <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.logic.html">logical functions</a>, boolean-array indexing provides a sleek interface for accessing the particular contents of an array, irrespective of the array’s shape and the layout of its contents. This method of indexing is especially powerful in the context of performing augmented updates to an array, which is the subject of the following subsection.</p>
+<p>Armed with NumPy’s suite of <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.logic.html">logical functions</a>, boolean-array indexing provides a sleek interface for accessing the particular contents of an array, irrespective of the array’s shape and the layout of its contents. This method of indexing is especially powerful in the context of performing augmented updates to an array, which is the subject of the following subsection.</p>
 <div class="admonition note">
 <p class="admonition-title fa fa-exclamation-circle"><strong>Reading Comprehension: numpy.where</strong></p>
 <p>Given the array</p>
@@ -639,7 +646,7 @@ assignment:</p>
 <span class="gp">... </span>              <span class="p">[</span> <span class="mf">0.84</span><span class="p">,</span>  <span class="mf">0.76</span><span class="p">,</span>  <span class="mf">0.25</span><span class="p">,</span>  <span class="mf">0.07</span><span class="p">]])</span>
 </pre></div>
 </div>
-<p>Replace the diagonal elements of <code class="docutils literal notranslate"><span class="pre">x</span></code> with <code class="docutils literal notranslate"><span class="pre">(-1,</span> <span class="pre">-2,</span> <span class="pre">-3,</span> <span class="pre">-4)</span></code>, and add <code class="docutils literal notranslate"><span class="pre">1</span></code> to all values in <code class="docutils literal notranslate"><span class="pre">x</span></code> that are greater than <code class="docutils literal notranslate"><span class="pre">0.8</span></code>.</p>
+<p>Replace the diagonal elements of <code class="docutils literal notranslate"><span class="pre">x</span></code> with <code class="docutils literal notranslate"><span class="pre">(0,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3)</span></code>, and add <code class="docutils literal notranslate"><span class="pre">1</span></code> to all values in <code class="docutils literal notranslate"><span class="pre">x</span></code> that are greater than <code class="docutils literal notranslate"><span class="pre">0.8</span></code>.</p>
 </div>
 </div>
 <div class="section" id="Combining-Basic-and-Advanced-Indexing-Schemes">
@@ -661,15 +668,15 @@ assignment:</p>
 <span class="n">array</span><span class="p">([[</span> <span class="mi">3</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span> <span class="mi">11</span><span class="p">]])</span>
 </pre></div>
 </div>
-<p>The rules for resolving the various possible combinations of basic and advanced indexing are nontrivial. Refer to the <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html#combining-advanced-and-basic-indexing">official NumPy documentation</a> for a detailed description for these rules. In practice, basic and advanced indexing can typically be used independently from one another.</p>
+<p>The rules for resolving the various possible combinations of basic and advanced indexing are nontrivial. Refer to the <a class="reference external" href="https://numpy.org/doc/stable/reference/arrays.indexing.html#combining-advanced-and-basic-indexing">official NumPy documentation</a> for a detailed description for these rules. In practice, basic and advanced indexing can typically be used independently from one another.</p>
 </div>
 <div class="section" id="Links-to-Official-Documentation">
 <h2>Links to Official Documentation<a class="headerlink" href="#Links-to-Official-Documentation" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html#advanced-indexing">Advanced Indexing</a></p></li>
-<li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/routines.logic.html">Logical Functions</a></p></li>
-<li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.where.html">numpy.where</a></p></li>
-<li><p><a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/arrays.indexing.html#combining-advanced-and-basic-indexing">Combining Basics and Advanced Indexing</a></p></li>
+<li><p><a class="reference external" href="https://numpy.org/doc/stable/reference/arrays.indexing.html#advanced-indexing">Advanced Indexing</a></p></li>
+<li><p><a class="reference external" href="https://numpy.org/doc/stable/reference/routines.logic.html">Logical Functions</a></p></li>
+<li><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.where.html">numpy.where</a></p></li>
+<li><p><a class="reference external" href="https://numpy.org/doc/stable/reference/arrays.indexing.html#combining-advanced-and-basic-indexing">Combining Basics and Advanced Indexing</a></p></li>
 </ul>
 </div>
 <div class="section" id="Reading-Comprehension-Solutions">
@@ -768,6 +775,13 @@ assignment:</p>
 <span class="gp">... </span>              <span class="p">[</span> <span class="mf">0.84</span><span class="p">,</span>  <span class="mf">0.76</span><span class="p">,</span>  <span class="mf">0.25</span><span class="p">,</span>  <span class="mf">0.07</span><span class="p">]])</span>
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">)]</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="go"># equivalent (works for the general case of a square matrix of N-dims)</span>
+<span class="go"># x[tuple(np.arange(x) for x in x.shape)] = range(x.shape[0])</span>
+
+<span class="go"># equivalent (using numpy built-in functions):</span>
+<span class="go"># x[np.diag_indices_from(x)] = np.arange(4)</span>
+<span class="go"># np.fill_diagonal(x, np.arange(4))</span>
+
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="p">[</span><span class="mf">0.8</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
 <span class="go">array([[ 0.  ,  0.05,  1.84,  0.21],</span>
@@ -784,29 +798,29 @@ assignment:</p>
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../module_3_problems.html" class="btn btn-neutral float-right" title="Module 3: Problems" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="BasicIndexing.html" class="btn btn-neutral float-left" title="Introducing Basic and Advanced Indexing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="../module_3_problems.html" class="btn btn-neutral float-right" title="Module 3: Problems" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="BasicIndexing.html" class="btn btn-neutral float-left" title="Introducing Basic and Advanced Indexing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2019, Ryan Soklaski
+        &#169; Copyright 2021, Ryan Soklaski.
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
-
         </div>
       </div>
 
@@ -814,7 +828,6 @@ assignment:</p>
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
